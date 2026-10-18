@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 38px;
+  color: #1e293b;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Form */
+
+.task-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+
+button {
+  border: none;
+  padding: 11px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.task-form button[type="submit"] {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  padding: 14px;
+}
+
+.task-form button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+/* AI Feature Styling */
+.ai-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -4px;
+  margin-bottom: 2px;
+}
+
+.ai-gen-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%) !important;
+  color: white !important;
+  font-size: 13.5px !important;
+  padding: 9px 16px !important;
+  border-radius: 8px !important;
+  width: auto !important;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.25);
+  font-weight: 600;
+}
+
+.ai-gen-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.ai-gen-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ai-notice-badge {
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  color: #6d28d9;
+  font-size: 12.5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 0 0 8px 0;
+  text-align: left;
+}
+
+/* Messages */
+
+.error,
+.message {
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.error {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.message {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+/* Tasks Heading */
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-size: 24px;
+}
+
+/* Task List */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid #2563eb;
+  transition: 0.2s ease;
+}
+
+.task:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.task h3 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 20px;
+}
+
+.task p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Completed Task */
+
+.completed {
+  border-left-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.completed h3 {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+/* Action Buttons */
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.complete-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.complete-btn:hover {
+  background: #15803d;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+.task-assigned {
+  font-size: 13px;
+  color: #475569;
+  margin-top: 8px;
+  display: inline-block;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+}
+
+/* Empty State */
+
+.container > p:not(.subtitle):not(.error):not(.message) {
+  text-align: center;
+  color: #64748b;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buttons {
+    width: 100%;
+  }
+
+  .buttons button {
+    flex: 1;
+  }
+}

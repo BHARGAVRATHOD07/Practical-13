@@ -1,0 +1,29 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #1e293b;
+  background: #f1f5f9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e0f2fe 0%,
+      #f8fafc 45%,
+      #eef2ff 100%
+    );
+}
+
+#root {
+  min-height: 100vh;
+}
